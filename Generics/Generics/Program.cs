@@ -4,27 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generics
+namespace Course
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*
-            List<string> list = new List<string>();
+            PrintService<int> printService = new PrintService<int>();
 
-            list.Add("Matheus");
-            list.Add("Bruna");
-            list.Add("Marcos");
-            list.Add("Pedro");
+            int n;
 
-            foreach(string s in list)
+            do 
             {
-                Console.WriteLine(s);
+                Console.Write("How many values? ");
+                n = int.Parse(Console.ReadLine());
+            } while (n < 0 || n > 10);
+
+            for(int i=0; i<n; i++)
+            {
+                printService.addValue(int.Parse(Console.ReadLine()));
             }
 
-            Console.ReadLine();
-            */
+            printService.print();
+
+            Console.WriteLine("First: " + printService.first());
         }
     }
 }
